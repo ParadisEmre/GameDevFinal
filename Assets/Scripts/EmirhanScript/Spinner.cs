@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AsteroidSpinner : MonoBehaviour
+public class Spinner : MonoBehaviour
 {
     private float speed = 0.7f;
     private float x, y, z;
