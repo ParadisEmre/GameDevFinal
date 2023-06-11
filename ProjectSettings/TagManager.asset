@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ship
   - Asteroid
+  - Shield
   layers:
   - Default
   - TransparentFX

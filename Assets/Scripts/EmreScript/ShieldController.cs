@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class ShieldController : MonoBehaviour
 {
+    public SphereCollider shieldCollider;
     public GameObject shield;
     public bool isShieldActive = false;
     public float shieldTimer = 0f;
-    public float shieldDuration = 3f;
+    public float shieldDuration = 0.5f;
     public float shieldCooldown = 10f;
-    private float safetyTimer = 0.2f;
 
     void Start()
     {
@@ -28,10 +28,12 @@ public class ShieldController : MonoBehaviour
                 ActivateShield();
             }
         }
+            
     }
 
     public void ActivateShield()
     {
+        shieldCollider.enabled = true;
         isShieldActive = true;
         shieldTimer = 0f;
         shield.SetActive(true);
@@ -39,19 +41,18 @@ public class ShieldController : MonoBehaviour
 
     public void DeactivateShield()
     {
+        shieldCollider.enabled = false;
         isShieldActive = false;
         shieldTimer = 0f;
         shield.SetActive(false);
     }
-
+    
     public void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Asteroid")
-        {   
+        if (other.gameObject.tag == "Asteroid")
+        {
             DeactivateShield();
-            shield.SetActive(false);
             Destroy(other.gameObject);
         }
-        
     }
 }
