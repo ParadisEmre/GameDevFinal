@@ -6,6 +6,7 @@ public class ShipControl : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 10f;
     [SerializeField] private float maxSpeed = 100f;
+    public float buffDuration = 5f;
 
     private Camera cam;
     Vector3 direction;
@@ -76,6 +77,23 @@ public class ShipControl : MonoBehaviour
         }
 
         transform.position = newPos;
+    }
+
+    public void ShieldBuffCollected()
+    {
+    
+        GetComponent<Collider>().enabled = false;
+        
+        StartCoroutine(DeactivateShield());
+    }
+
+    private IEnumerator DeactivateShield()
+    {
+
+        yield return new WaitForSeconds(buffDuration);
+
+        GetComponent<Collider>().enabled = true;
+
     }
 
 }
