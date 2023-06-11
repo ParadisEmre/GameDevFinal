@@ -689,7 +689,9 @@ MonoBehaviour:
   spawnRate: 1
   timer: 0
   minForce: 1
+  asteroidSpeed: 1
   maxForce: 5
+  speedDividerForAsteroids: 20000
 --- !u!4 &562435414
 Transform:
   m_ObjectHideFlags: 0
@@ -920,7 +922,7 @@ MonoBehaviour:
   isShieldActive: 0
   shieldTimer: 0
   shieldDuration: 0.5
-  shieldCooldown: 2
+  shieldCooldown: 7
 --- !u!135 &1070803747
 SphereCollider:
   m_ObjectHideFlags: 0
