@@ -6,6 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/YarenScene/MenuScene.unity
+    guid: 159c40ba4bf128048bb4e6035b346c6a
+  - enabled: 1
+    path: Assets/Scenes/YarenScene/CreditsScene.unity
+    guid: 4a15b329355d15b489646f91d7d13462
+  - enabled: 1
+    path: Assets/Scenes/YarenScene/SettingsScene.unity
+    guid: df7cd23094f58ac4d851d38209058d09
+  - enabled: 1
+    path: Assets/Scenes/YarenScene/ShopScene.unity
+    guid: 03c0a5262897bf5448c8d1d925f82d06
+  - enabled: 1
     path: Assets/Scenes/EmreScene/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
   m_configObjects: {}
