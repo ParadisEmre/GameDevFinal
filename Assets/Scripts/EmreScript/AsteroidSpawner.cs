@@ -13,7 +13,9 @@ public class AsteroidSpawner : MonoBehaviour
     public float asteroidSpeed = 1f;
     public float maxForce = 100f;
     public float speedDividerForAsteroids = 20000f;
+    public float rateDividerForAsteroids = 10000f;
     private Camera mainCamera;
+    int i = 0;
 
     private void Start()
     {
@@ -28,14 +30,19 @@ public class AsteroidSpawner : MonoBehaviour
             timer -= Time.deltaTime;
             if (timer <= 0f)
             {
-
                 if(Random.Range(0f, 1f) < 0.5f)
                 {
-                    SpawnRedAsteroid();
+                    for(i = Mathf.FloorToInt(Timer.instance.currentTime/5f); i > 0; i--)
+                    {
+                        SpawnRedAsteroid();
+                    }
                 }
                 else
                 {
-                    SpawnBlueAsteroid();
+                    for(i = Mathf.FloorToInt(Timer.instance.currentTime/5f); i > 0; i--)
+                    {
+                        SpawnBlueAsteroid();
+                    }
                 }
                 timer = spawnRate;
             }
@@ -43,7 +50,8 @@ public class AsteroidSpawner : MonoBehaviour
             {
                 asteroidSpeed = maxForce;
             }
-            StartCoroutine(SetSpeedOfAsteroids());
+            asteroidSpeed += Timer.instance.currentTime / speedDividerForAsteroids;
+            spawnRate -= Timer.instance.currentTime / rateDividerForAsteroids;
         }
     }
 
@@ -121,9 +129,4 @@ public class AsteroidSpawner : MonoBehaviour
         return Vector3.zero;
     }
 
-    public IEnumerator SetSpeedOfAsteroids()
-    {
-        yield return new WaitForSeconds(5f);
-        asteroidSpeed += Timer.instance.currentTime / speedDividerForAsteroids;
-    }
 }
