@@ -123,6 +123,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!4 &25371879 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3253633566415497092, guid: 0af188fa74810c3479f888fbedf27b55,
+    type: 3}
+  m_PrefabInstance: {fileID: 281712360}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &162639184
 GameObject:
   m_ObjectHideFlags: 0
@@ -944,6 +950,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8813225086610676861, guid: 079a45e1d1bd4034eb35a7ada7f6a6b8,
         type: 3}
+      propertyPath: maxForce
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8813225086610676861, guid: 079a45e1d1bd4034eb35a7ada7f6a6b8,
+        type: 3}
       propertyPath: spawnRate
       value: 2
       objectReference: {fileID: 0}
@@ -951,7 +962,7 @@ PrefabInstance:
         type: 3}
       propertyPath: shipTransform
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 25371879}
     - target: {fileID: 8813225086610676861, guid: 079a45e1d1bd4034eb35a7ada7f6a6b8,
         type: 3}
       propertyPath: redAsteroidPrefab
@@ -962,6 +973,11 @@ PrefabInstance:
       propertyPath: blueAsteroidPrefab
       value: 
       objectReference: {fileID: 2581105160491993958}
+    - target: {fileID: 8813225086610676861, guid: 079a45e1d1bd4034eb35a7ada7f6a6b8,
+        type: 3}
+      propertyPath: speedMultiplierForAsteroids
+      value: 20000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

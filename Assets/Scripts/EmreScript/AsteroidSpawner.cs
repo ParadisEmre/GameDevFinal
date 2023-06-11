@@ -10,13 +10,15 @@ public class AsteroidSpawner : MonoBehaviour
     public float spawnRate = 1f;
     public float timer = 0f;
     public float minForce = 1f;
-    public float maxForce = 5f;
-
+    public float asteroidSpeed = 1f;
+    public float maxForce = 100f;
+    public float speedDividerForAsteroids = 20000f;
     private Camera mainCamera;
 
     private void Start()
     {
         mainCamera = Camera.main;
+        asteroidSpeed = minForce;
     }
 
     private void Update()
@@ -37,6 +39,11 @@ public class AsteroidSpawner : MonoBehaviour
                 }
                 timer = spawnRate;
             }
+            if(asteroidSpeed > maxForce)
+            {
+                asteroidSpeed = maxForce;
+            }
+            StartCoroutine(SetSpeedOfAsteroids());
         }
     }
 
@@ -48,7 +55,7 @@ public class AsteroidSpawner : MonoBehaviour
         GameObject asteroid = Instantiate(redAsteroidPrefab, spawnPosition, Quaternion.identity);
 
         Rigidbody asteroidRigidbody = asteroid.GetComponent<Rigidbody>();
-        asteroidRigidbody.AddForce(direction * Random.Range(minForce, maxForce), ForceMode.Impulse);
+        asteroidRigidbody.AddForce(direction * asteroidSpeed, ForceMode.Impulse);
 
         asteroid.transform.rotation = Random.rotation;
     }
@@ -61,7 +68,7 @@ public class AsteroidSpawner : MonoBehaviour
         GameObject asteroid = Instantiate(blueAsteroidPrefab, spawnPosition, Quaternion.identity);
 
         Rigidbody asteroidRigidbody = asteroid.GetComponent<Rigidbody>();
-        asteroidRigidbody.AddForce(direction * Random.Range(minForce, maxForce), ForceMode.Impulse);
+        asteroidRigidbody.AddForce(direction * asteroidSpeed, ForceMode.Impulse);
 
         asteroid.transform.rotation = Random.rotation;
     }
@@ -112,5 +119,11 @@ public class AsteroidSpawner : MonoBehaviour
         }
 
         return Vector3.zero;
+    }
+
+    public IEnumerator SetSpeedOfAsteroids()
+    {
+        yield return new WaitForSeconds(5f);
+        asteroidSpeed += Timer.instance.currentTime / speedDividerForAsteroids;
     }
 }
