@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4959267766021301006}
   - component: {fileID: 2546965252848031576}
   - component: {fileID: 891796052017751466}
+  - component: {fileID: 8406690675152311696}
   m_Layer: 0
   m_Name: ShieldBuff
   m_TagString: Untagged
@@ -64,6 +65,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 0b109ea620460d94a805632bf51e21d9, type: 2}
+  - {fileID: 2100000, guid: 415bf16537da5724baa0ccac323d0a2e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -133,3 +135,15 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &8406690675152311696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3593606569811387939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 540f51715c382634bb4f1d7fc5a5107b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

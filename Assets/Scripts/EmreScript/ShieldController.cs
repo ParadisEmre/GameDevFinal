@@ -12,32 +12,27 @@ public class ShieldController : MonoBehaviour
 
     void Start()
     {
-        
         shield.SetActive(true);
     }
 
     void Update()
     {
         // Check if shield is active
-        if (isShieldActive)
+        if (!isShieldActive)
         {
             shieldTimer += Time.deltaTime;
 
-            // Check if shield duration has passed
-            if (shieldTimer >= shieldDuration)
-            {
-                DeactivateShield();
-            }
-        }
-        else
-        {
-            shieldTimer += Time.deltaTime;
-
-            // Check if shield cooldown has passed
             if (shieldTimer >= shieldCooldown)
             {
                 ActivateShield();
             }
+            // shieldTimer += Time.deltaTime;
+
+            // // Check if shield duration has passed
+            // if (shieldTimer >= shieldDuration)
+            // {
+            //     DeactivateShield();
+            // }
         }
     }
 
@@ -58,7 +53,8 @@ public class ShieldController : MonoBehaviour
     public void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag == "Asteroid")
-        {
+        {   
+            DeactivateShield();
             shield.SetActive(false);
             Destroy(other.gameObject);
         }

@@ -22,7 +22,8 @@ public class CollectibleScore : MonoBehaviour
                     Timer.instance.addTime(value);
                 }
             }
+            Destroy(gameObject);
         }
-        Destroy(gameObject);
+        
     }
 }
