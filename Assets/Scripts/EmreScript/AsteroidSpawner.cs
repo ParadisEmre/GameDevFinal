@@ -4,59 +4,103 @@ using UnityEngine;
 
 public class AsteroidSpawner : MonoBehaviour
 {
-    public GameObject blueAsteroidPrefab;
     public GameObject redAsteroidPrefab;
-    public float spawnRadius = 10f;
+    public GameObject blueAsteroidPrefab;
+    public Transform shipTransform;
     public float spawnRate = 1f;
-    public float timer = 0f;
-    // Start is called before the first frame update
-    void Start()
+    public float minForce = 1f;
+    public float maxForce = 5f;
+
+    private Camera mainCamera;
+    private float nextSpawnTime;
+
+    private void Start()
     {
-        
+        mainCamera = Camera.main;
+        nextSpawnTime = spawnRate;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
-        timer -= Time.deltaTime;
-        if(timer <= 0f && Random.Range(0, 10) > 5)
+        if (Time.time >= nextSpawnTime)
         {
-            SpawnBlueAsteroid();
-            timer = spawnRate;
+
+            if(Random.Range(0f, 1f) < 0.5f)
+            {
+                SpawnRedAsteroid();
+            }
+            else
+            {
+                SpawnBlueAsteroid();
+            }
+            nextSpawnTime = Time.time + spawnRate;
         }
-        else if(timer <= 0f && Random.Range(0, 10) <= 5)
-        {
-            SpawnRedAsteroid();
-            timer = spawnRate;
-        }
+    }
+
+    public void SpawnRedAsteroid(){
+        Vector3 spawnPosition = GetRandomSpawnPosition();
+        Vector3 direction = GetSpawnDirection(spawnPosition);
+
+        GameObject asteroid = Instantiate(redAsteroidPrefab, spawnPosition, Quaternion.identity);
+        Rigidbody asteroidRigidbody = asteroid.GetComponent<Rigidbody>();
+        asteroidRigidbody.AddForce(direction * Random.Range(minForce, maxForce), ForceMode.Impulse);
     }
 
     public void SpawnBlueAsteroid()
     {
-        Vector3 randomPosition = Random.insideUnitSphere * spawnRadius;
-        Instantiate(blueAsteroidPrefab, randomPosition, Quaternion.identity);
-    }
+        Vector3 spawnPosition = GetRandomSpawnPosition();
+        Vector3 direction = GetSpawnDirection(spawnPosition);
 
-    public void SpawnRedAsteroid()
-    {
-        Vector3 randomPosition = Random.insideUnitSphere * spawnRadius;
-        Instantiate(redAsteroidPrefab, randomPosition, Quaternion.identity);
+        GameObject asteroid = Instantiate(blueAsteroidPrefab, spawnPosition, Quaternion.identity);
+        Rigidbody asteroidRigidbody = asteroid.GetComponent<Rigidbody>();
+        asteroidRigidbody.AddForce(direction * Random.Range(minForce, maxForce), ForceMode.Impulse);
     }
 
     public Vector3 GetRandomSpawnPosition()
     {
-        float viewportX = Random.Range(0f, 1f);
-        float viewportY = Random.Range(0f, 1f);
-        float viewportZ = mainCamera.nearClipPlane;
+        Vector3 spawnPosition = Vector3.zero;
 
-        return mainCamera.ViewportToWorldPoint(new Vector3(viewportX, viewportY, viewportZ));
+        
+        int side = Random.Range(0, 4);
+        float spawnDistance = Random.Range(10f, 20f);
+
+        
+        switch (side)
+        {
+            case 0:
+                spawnPosition = mainCamera.ViewportToWorldPoint(new Vector3(Random.Range(0f, 1f), 1f, spawnDistance));
+                break;
+            case 1:
+                spawnPosition = mainCamera.ViewportToWorldPoint(new Vector3(Random.Range(0f, 1f), 0f, spawnDistance));
+                break;
+            case 2:
+                spawnPosition = mainCamera.ViewportToWorldPoint(new Vector3(0f, Random.Range(0f, 1f), spawnDistance));
+                break;
+            case 3:
+                spawnPosition = mainCamera.ViewportToWorldPoint(new Vector3(1f, Random.Range(0f, 1f), spawnDistance));
+                break;
+        }
+
+        spawnPosition.z = 0f; 
+
+        if (shipTransform != null)
+        {
+            Vector3 shipPosition = shipTransform.position;
+            shipPosition.z = 0f;
+            spawnPosition = shipPosition + (spawnPosition - shipPosition).normalized * spawnDistance;
+        }
+
+        return spawnPosition;
     }
 
     public Vector3 GetSpawnDirection(Vector3 spawnPosition)
     {
-        Vector3 screenCenter = mainCamera.ScreenToWorldPoint(new Vector3(Screen.width / 2f, Screen.height / 2f, mainCamera.nearClipPlane));
-        return (screenCenter - spawnPosition).normalized;
-    }
+        if (shipTransform != null)
+        {
+            Vector3 direction = (shipTransform.position - spawnPosition).normalized;
+            return direction;
+        }
 
+        return Vector3.zero;
+    }
 }
