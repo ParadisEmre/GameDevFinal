@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 705889324603726446}
   - component: {fileID: 2192713891358366227}
   - component: {fileID: 2216242003782491880}
+  - component: {fileID: 2884281621133107639}
   m_Layer: 0
   m_Name: Asteroid Lava Red
   m_TagString: Untagged
@@ -148,3 +149,15 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &2884281621133107639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7608737691723678759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 540f51715c382634bb4f1d7fc5a5107b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AsteroidSpinner : MonoBehaviour
 {
-    private float speed = 1f;
+    private float speed = 0.7f;
     private float x, y, z;
 
     // Start is called before the first frame update
