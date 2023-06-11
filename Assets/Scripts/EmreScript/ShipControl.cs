@@ -113,9 +113,9 @@ private IEnumerator DeactivateInvincibility()
     {
         Material material = renderer.material;
 
-        material.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.One);
+        // material.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.One);
         material.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.Zero);
-        material.SetInt("_ZWrite", 1);
+        // material.SetInt("_ZWrite", 1);
         material.DisableKeyword("_ALPHATEST_ON");
         material.DisableKeyword("_ALPHABLEND_ON");
         material.DisableKeyword("_ALPHAPREMULTIPLY_ON");
