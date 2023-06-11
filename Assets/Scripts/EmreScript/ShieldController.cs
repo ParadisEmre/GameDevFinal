@@ -9,6 +9,7 @@ public class ShieldController : MonoBehaviour
     public float shieldTimer = 0f;
     public float shieldDuration = 3f;
     public float shieldCooldown = 10f;
+    private float safetyTimer = 0.2f;
 
     void Start()
     {
@@ -26,13 +27,6 @@ public class ShieldController : MonoBehaviour
             {
                 ActivateShield();
             }
-            // shieldTimer += Time.deltaTime;
-
-            // // Check if shield duration has passed
-            // if (shieldTimer >= shieldDuration)
-            // {
-            //     DeactivateShield();
-            // }
         }
     }
 

@@ -1217,6 +1217,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 835640189}
     m_Modifications:
+    - target: {fileID: 891796052017751466, guid: 3f0a7aee3e6dc624fbf455bdb286a687,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 891796052017751466, guid: 3f0a7aee3e6dc624fbf455bdb286a687,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2546965252848031576, guid: 3f0a7aee3e6dc624fbf455bdb286a687,
         type: 3}
       propertyPath: m_IsTrigger
