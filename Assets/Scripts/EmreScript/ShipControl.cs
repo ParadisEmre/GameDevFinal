@@ -52,6 +52,7 @@ public class ShipControl : MonoBehaviour
                 direction = Vector3.zero;
             }
     }
+
     public void StayInScreen(){
         Vector3 newPos = transform.position;
         Vector3 viewPos = cam.WorldToViewportPoint(transform.position);
@@ -76,4 +77,5 @@ public class ShipControl : MonoBehaviour
 
         transform.position = newPos;
     }
+
 }
