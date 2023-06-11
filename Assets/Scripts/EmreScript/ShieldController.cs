@@ -12,7 +12,8 @@ public class ShieldController : MonoBehaviour
 
     void Start()
     {
-        shield.SetActive(false);
+        
+        shield.SetActive(true);
     }
 
     void Update()
@@ -59,6 +60,8 @@ public class ShieldController : MonoBehaviour
         if(other.gameObject.tag == "Asteroid")
         {
             shield.SetActive(false);
+            Destroy(other.gameObject);
         }
+        
     }
 }
