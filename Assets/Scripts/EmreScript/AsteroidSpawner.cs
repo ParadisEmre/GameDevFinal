@@ -8,21 +8,21 @@ public class AsteroidSpawner : MonoBehaviour
     public GameObject blueAsteroidPrefab;
     public Transform shipTransform;
     public float spawnRate = 1f;
+    public float timer = 0f;
     public float minForce = 1f;
     public float maxForce = 5f;
 
     private Camera mainCamera;
-    private float nextSpawnTime;
 
     private void Start()
     {
         mainCamera = Camera.main;
-        nextSpawnTime = spawnRate;
     }
 
     private void Update()
     {
-        if (Time.time >= nextSpawnTime)
+        timer -= Time.deltaTime;
+        if (timer <= 0f)
         {
 
             if(Random.Range(0f, 1f) < 0.5f)
@@ -33,11 +33,12 @@ public class AsteroidSpawner : MonoBehaviour
             {
                 SpawnBlueAsteroid();
             }
-            nextSpawnTime = Time.time + spawnRate;
+            timer = spawnRate;
         }
     }
 
-    public void SpawnRedAsteroid(){
+    public void SpawnRedAsteroid()
+    {
         Vector3 spawnPosition = GetRandomSpawnPosition();
         Vector3 direction = GetSpawnDirection(spawnPosition);
 
