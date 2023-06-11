@@ -8,6 +8,8 @@ public class ShipControl : MonoBehaviour
     [SerializeField] private float maxSpeed = 100f;
     public float buffDuration = 5f;
 
+    public GameObject shield;
+
     private Camera cam;
     Vector3 direction;
     private Rigidbody rb;
@@ -16,6 +18,7 @@ public class ShipControl : MonoBehaviour
     {
         cam = Camera.main;
         rb = GetComponent<Rigidbody>();
+        shield.SetActive(false);
     }
 
     // Update is called once per frame
@@ -81,9 +84,8 @@ public class ShipControl : MonoBehaviour
 
     public void ShieldBuffCollected()
     {
-    
+        shield.SetActive(true);
         GetComponent<Collider>().enabled = false;
-        
         StartCoroutine(DeactivateShield());
     }
 
@@ -93,7 +95,7 @@ public class ShipControl : MonoBehaviour
         yield return new WaitForSeconds(buffDuration);
 
         GetComponent<Collider>().enabled = true;
-
+        shield.SetActive(false);
     }
 
 }
