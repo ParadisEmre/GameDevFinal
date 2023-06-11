@@ -8,8 +8,6 @@ public class ShipControl : MonoBehaviour
     [SerializeField] private float maxSpeed = 100f;
     public float buffDuration = 5f;
 
-    public GameObject shield;
-
     private Camera cam;
     Vector3 direction;
     private Rigidbody rb;
@@ -82,9 +80,9 @@ public class ShipControl : MonoBehaviour
         transform.position = newPos;
     }
 
-    public void ShieldBuffCollected()
+    public void InvinciblityBuffCollected()
     {
-        shield.SetActive(true);
+        this.
         GetComponent<Collider>().enabled = false;
         StartCoroutine(DeactivateShield());
     }
