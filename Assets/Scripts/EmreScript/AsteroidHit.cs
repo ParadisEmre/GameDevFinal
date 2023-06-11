@@ -12,5 +12,4 @@ public class AsteroidHit : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    
 }
