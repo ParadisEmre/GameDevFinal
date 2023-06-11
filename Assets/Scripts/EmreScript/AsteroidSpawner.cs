@@ -14,6 +14,8 @@ public class AsteroidSpawner : MonoBehaviour
     public float maxForce = 100f;
     public float speedDividerForAsteroids = 20000f;
     public float rateDividerForAsteroids = 10000f;
+    public float incrementRate = 5f;
+    public float decrementRate = 20f;
     private Camera mainCamera;
     int i = 0;
 
@@ -31,15 +33,16 @@ public class AsteroidSpawner : MonoBehaviour
             if (timer <= 0f)
             {
                 if(Random.Range(0f, 1f) < 0.5f)
-                {
-                    for(i = Mathf.FloorToInt(Timer.instance.currentTime/5f); i > 0; i--)
+                {   
+                    for(i = Mathf.FloorToInt(Timer.instance.currentTime/incrementRate) - Mathf.FloorToInt(Timer.instance.currentTime/decrementRate); i > 0; i--)
                     {
+                        
                         SpawnRedAsteroid();
                     }
                 }
                 else
                 {
-                    for(i = Mathf.FloorToInt(Timer.instance.currentTime/5f); i > 0; i--)
+                    for(i = Mathf.FloorToInt(Timer.instance.currentTime/incrementRate) - Mathf.FloorToInt(Timer.instance.currentTime/decrementRate); i > 0; i--)
                     {
                         SpawnBlueAsteroid();
                     }
