@@ -21,19 +21,22 @@ public class AsteroidSpawner : MonoBehaviour
 
     private void Update()
     {
-        timer -= Time.deltaTime;
-        if (timer <= 0f)
+        if(shipTransform != null)
         {
+            timer -= Time.deltaTime;
+            if (timer <= 0f)
+            {
 
-            if(Random.Range(0f, 1f) < 0.5f)
-            {
-                SpawnRedAsteroid();
+                if(Random.Range(0f, 1f) < 0.5f)
+                {
+                    SpawnRedAsteroid();
+                }
+                else
+                {
+                    SpawnBlueAsteroid();
+                }
+                timer = spawnRate;
             }
-            else
-            {
-                SpawnBlueAsteroid();
-            }
-            timer = spawnRate;
         }
     }
 
@@ -41,10 +44,13 @@ public class AsteroidSpawner : MonoBehaviour
     {
         Vector3 spawnPosition = GetRandomSpawnPosition();
         Vector3 direction = GetSpawnDirection(spawnPosition);
-
+        
         GameObject asteroid = Instantiate(redAsteroidPrefab, spawnPosition, Quaternion.identity);
+
         Rigidbody asteroidRigidbody = asteroid.GetComponent<Rigidbody>();
         asteroidRigidbody.AddForce(direction * Random.Range(minForce, maxForce), ForceMode.Impulse);
+
+        asteroid.transform.rotation = Random.rotation;
     }
 
     public void SpawnBlueAsteroid()
@@ -53,8 +59,11 @@ public class AsteroidSpawner : MonoBehaviour
         Vector3 direction = GetSpawnDirection(spawnPosition);
 
         GameObject asteroid = Instantiate(blueAsteroidPrefab, spawnPosition, Quaternion.identity);
+
         Rigidbody asteroidRigidbody = asteroid.GetComponent<Rigidbody>();
         asteroidRigidbody.AddForce(direction * Random.Range(minForce, maxForce), ForceMode.Impulse);
+
+        asteroid.transform.rotation = Random.rotation;
     }
 
     public Vector3 GetRandomSpawnPosition()
