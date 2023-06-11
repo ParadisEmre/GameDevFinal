@@ -16,7 +16,6 @@ public class ShipControl : MonoBehaviour
     {
         cam = Camera.main;
         rb = GetComponent<Rigidbody>();
-        shield.SetActive(false);
     }
 
     // Update is called once per frame
@@ -80,20 +79,53 @@ public class ShipControl : MonoBehaviour
         transform.position = newPos;
     }
 
-    public void InvinciblityBuffCollected()
+public void InvinciblityBuffCollected()
+{
+    Renderer[] childRenderers = GetComponentsInChildren<Renderer>();
+    foreach(Renderer renderer in childRenderers)
     {
-        this.
-        GetComponent<Collider>().enabled = false;
-        StartCoroutine(DeactivateShield());
+        Material material = renderer.material;
+
+        material.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.SrcAlpha);
+        material.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha);
+        material.SetInt("_ZWrite", 0);
+        material.DisableKeyword("_ALPHATEST_ON");
+        material.EnableKeyword("_ALPHABLEND_ON");
+        material.DisableKeyword("_ALPHAPREMULTIPLY_ON");
+        material.renderQueue = (int)UnityEngine.Rendering.RenderQueue.Transparent;
+
+
+        Color color = material.color;
+        color.a = 0.4f;
+        material.color = color;
     }
 
-    private IEnumerator DeactivateShield()
+    GetComponent<Collider>().enabled = false;
+    StartCoroutine(DeactivateInvincibility());
+}
+
+private IEnumerator DeactivateInvincibility()
+{
+    yield return new WaitForSeconds(buffDuration);
+
+    Renderer[] childRenderers = GetComponentsInChildren<Renderer>();
+    foreach(Renderer renderer in childRenderers)
     {
+        Material material = renderer.material;
 
-        yield return new WaitForSeconds(buffDuration);
+        material.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.One);
+        material.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.Zero);
+        material.SetInt("_ZWrite", 1);
+        material.DisableKeyword("_ALPHATEST_ON");
+        material.DisableKeyword("_ALPHABLEND_ON");
+        material.DisableKeyword("_ALPHAPREMULTIPLY_ON");
+        material.renderQueue = -1;
 
-        GetComponent<Collider>().enabled = true;
-        shield.SetActive(false);
+        Color color = material.color;
+        color.a = 1f;
+        material.color = color;
     }
 
+    GetComponent<Collider>().enabled = true;
+}
 }
