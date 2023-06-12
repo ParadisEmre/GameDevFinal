@@ -11,6 +11,7 @@ public class CollectibleScore : MonoBehaviour
     {
         if(other.gameObject.tag == "Ship")
         {
+            AudioControllerScript.instance.PlaySound(0);
             if (tmp.text.StartsWith("+"))
             {
                 // Extract the numeric part of the text (excluding the "+")

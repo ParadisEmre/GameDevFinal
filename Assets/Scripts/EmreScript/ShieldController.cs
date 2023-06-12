@@ -6,7 +6,7 @@ public class ShieldController : MonoBehaviour
 {
     public SphereCollider shieldCollider;
     public GameObject shield;
-    public bool isShieldActive = false;
+    public bool isShieldActive = true;
     public float shieldTimer = 0f;
     public float shieldDuration = 0.5f;
     public float shieldCooldown = 10f;
@@ -35,8 +35,8 @@ public class ShieldController : MonoBehaviour
     {
         shieldCollider.enabled = true;
         isShieldActive = true;
-        shieldTimer = 0f;
         shield.SetActive(true);
+        AudioControllerScript.instance.PlaySound(5);
     }
 
     public void DeactivateShield()
@@ -51,6 +51,7 @@ public class ShieldController : MonoBehaviour
     {
         if (other.gameObject.tag == "Asteroid")
         {
+            AudioControllerScript.instance.PlaySound(6);
             DeactivateShield();
             Destroy(other.gameObject);
         }

@@ -21,6 +21,7 @@ public class ShipHealthController : MonoBehaviour
         health--;
         if(health <= 0)
         {
+            AudioControllerScript.instance.PlaySound(1);
             SceneManager.LoadScene(0);
             Destroy(gameObject);
         }

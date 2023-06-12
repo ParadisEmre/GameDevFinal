@@ -8,6 +8,7 @@ public class AsteroidHit : MonoBehaviour
     {
         if(other.gameObject.tag == "Ship")
         {
+            AudioControllerScript.instance.PlaySound(6);
             other.gameObject.GetComponent<ShipHealthController>().GotHit();
             Destroy(gameObject);
         }

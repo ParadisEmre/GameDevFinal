@@ -81,6 +81,7 @@ public class ShipControl : MonoBehaviour
 
 public void InvinciblityBuffCollected()
 {
+    AudioControllerScript.instance.PlaySound(2);
     Renderer[] childRenderers = GetComponentsInChildren<Renderer>();
     foreach(Renderer renderer in childRenderers)
     {
