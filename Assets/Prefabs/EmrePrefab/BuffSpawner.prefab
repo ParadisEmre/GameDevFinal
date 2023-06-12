@@ -44,8 +44,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad43b77fa3d7d0140a3da1a50e7307ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  invincibleBuffPrefab: {fileID: 0}
-  scoreUpBuffPrefab: {fileID: 0}
+  invincibleBuffPrefab: {fileID: 3491591142736283598, guid: 6f844379f1670664a8bbe1c550bbfe55,
+    type: 3}
+  scoreUpBuffPrefab: {fileID: 2884757587252557165, guid: dad2a976be911cd4d9b0b54ffba0d879,
+    type: 3}
   shipTransform: {fileID: 0}
   spawnRate: 20
   timer: 0
