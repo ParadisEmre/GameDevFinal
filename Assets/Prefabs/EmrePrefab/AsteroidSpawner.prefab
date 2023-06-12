@@ -44,10 +44,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 172faeaceb070ca4ab4c506b485c3307, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  redAsteroidPrefab: {fileID: 0}
-  blueAsteroidPrefab: {fileID: 0}
+  redAsteroidPrefab: {fileID: 7608737691723678759, guid: c87932d992842fd4eb579ccfaae11d55,
+    type: 3}
+  blueAsteroidPrefab: {fileID: 7445812784426493532, guid: 86a9d707cdfcf7b4299b80933ae8943a,
+    type: 3}
   shipTransform: {fileID: 0}
-  spawnRate: 1
+  spawnRate: 5
   timer: 0
   minForce: 1
-  maxForce: 5
+  asteroidSpeed: 1
+  maxForce: 50
+  speedDividerForAsteroids: 20000
+  rateDividerForAsteroids: 200000
+  incrementRate: 5
+  decrementRate: 20

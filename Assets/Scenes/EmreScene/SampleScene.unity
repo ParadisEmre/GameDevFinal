@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.01558836, g: 0.015983826, b: 0.020254161, a: 1}
+  m_IndirectSpecularColor: {r: 0.010180789, g: 0.010254362, b: 0.013054414, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -851,41 +851,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8813225086610676861, guid: 079a45e1d1bd4034eb35a7ada7f6a6b8,
         type: 3}
-      propertyPath: maxForce
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 8813225086610676861, guid: 079a45e1d1bd4034eb35a7ada7f6a6b8,
-        type: 3}
-      propertyPath: spawnRate
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8813225086610676861, guid: 079a45e1d1bd4034eb35a7ada7f6a6b8,
-        type: 3}
       propertyPath: shipTransform
       value: 
       objectReference: {fileID: 25371879}
-    - target: {fileID: 8813225086610676861, guid: 079a45e1d1bd4034eb35a7ada7f6a6b8,
-        type: 3}
-      propertyPath: redAsteroidPrefab
-      value: 
-      objectReference: {fileID: 7608737691723678759, guid: c87932d992842fd4eb579ccfaae11d55,
-        type: 3}
-    - target: {fileID: 8813225086610676861, guid: 079a45e1d1bd4034eb35a7ada7f6a6b8,
-        type: 3}
-      propertyPath: blueAsteroidPrefab
-      value: 
-      objectReference: {fileID: 7445812784426493532, guid: 86a9d707cdfcf7b4299b80933ae8943a,
-        type: 3}
-    - target: {fileID: 8813225086610676861, guid: 079a45e1d1bd4034eb35a7ada7f6a6b8,
-        type: 3}
-      propertyPath: rateDividerForAsteroids
-      value: 200000
-      objectReference: {fileID: 0}
-    - target: {fileID: 8813225086610676861, guid: 079a45e1d1bd4034eb35a7ada7f6a6b8,
-        type: 3}
-      propertyPath: speedMultiplierForAsteroids
-      value: 20000
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1037,18 +1005,6 @@ PrefabInstance:
       propertyPath: shipTransform
       value: 
       objectReference: {fileID: 25371879}
-    - target: {fileID: 8937287384864838246, guid: edabebbe9578568438544501c52a9c44,
-        type: 3}
-      propertyPath: scoreUpBuffPrefab
-      value: 
-      objectReference: {fileID: 2884757587252557165, guid: dad2a976be911cd4d9b0b54ffba0d879,
-        type: 3}
-    - target: {fileID: 8937287384864838246, guid: edabebbe9578568438544501c52a9c44,
-        type: 3}
-      propertyPath: invincibleBuffPrefab
-      value: 
-      objectReference: {fileID: 3491591142736283598, guid: 6f844379f1670664a8bbe1c550bbfe55,
-        type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
