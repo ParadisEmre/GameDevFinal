@@ -692,6 +692,9 @@ MonoBehaviour:
   asteroidSpeed: 1
   maxForce: 5
   speedDividerForAsteroids: 20000
+  rateDividerForAsteroids: 10000
+  incrementRate: 5
+  decrementRate: 20
 --- !u!4 &562435414
 Transform:
   m_ObjectHideFlags: 0

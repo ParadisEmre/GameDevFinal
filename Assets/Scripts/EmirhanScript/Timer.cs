@@ -24,9 +24,13 @@ public class Timer : MonoBehaviour
         if(currentTime >= frenzyLimit)
         {
             timerText.color = Color.red;
+            //timer counts up twice as fast
+            currentTime = currentTime + Time.deltaTime * 2;
         }
-        //timer counts up
-        currentTime = currentTime += Time.deltaTime;
+        else{
+            //timer counts up
+            currentTime = currentTime + Time.deltaTime;
+        }
 
         //timer text is updated with 2 floating point format ex. 12.10
         timerText.text = currentTime.ToString("0.00");
