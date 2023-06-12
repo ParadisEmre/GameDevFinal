@@ -33,6 +33,7 @@ public class AudioControllerScript : MonoBehaviour
         {
             musicSource[i].Stop();
         }
+        PlaySound(4);
     }
 
     // Play a specific music track by index

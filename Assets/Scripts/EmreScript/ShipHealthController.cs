@@ -23,6 +23,7 @@ public class ShipHealthController : MonoBehaviour
         {
             AudioControllerScript.instance.PlaySound(1);
             SceneManager.LoadScene(0);
+            AudioControllerScript.instance.PlaySound(4);
             Destroy(gameObject);
         }
     }

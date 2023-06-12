@@ -12,6 +12,8 @@ public class Buttons : MonoBehaviour
     
     public void StartB()
     {
+        AudioControllerScript.instance.PlaySound(3);
+        AudioControllerScript.instance.StopSound(4);
         SceneManager.LoadScene("SampleScene");
     }
     
