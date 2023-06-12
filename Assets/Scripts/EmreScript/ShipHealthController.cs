@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ShipHealthController : MonoBehaviour
 {
@@ -20,6 +21,7 @@ public class ShipHealthController : MonoBehaviour
         health--;
         if(health <= 0)
         {
+            SceneManager.LoadScene(0);
             Destroy(gameObject);
         }
     }
