@@ -6,6 +6,22 @@
   <component name="ChangeListManager">
     <list default="true" id="36326332-89b8-411d-b629-408bc21ed0ca" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GameDevFinal/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GameDevFinal/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/EmirhanScene/SampleScene 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/EmirhanScene/SampleScene 1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/EmreScene/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/EmreScene/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/YarenScene/CreditsScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/YarenScene/CreditsScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/YarenScene/MenuScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/YarenScene/MenuScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/YarenScene/SettingsScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/YarenScene/SettingsScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/YarenScene/ShopScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/YarenScene/ShopScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StarSparrow/Materials/BonusContent/Mine Sample 1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StarSparrow/Materials/BonusContent/Mine Sample 1.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StarSparrow/Materials/Extra/Invincible.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StarSparrow/Materials/Extra/Invincible.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StarSparrow/Materials/Extra/Mesh.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StarSparrow/Materials/Extra/Mesh.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StarSparrow/Materials/Extra/Shield.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StarSparrow/Materials/Extra/Shield.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StarSparrow/Materials/Extra/StarSparrow_Yellow.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StarSparrow/Materials/Extra/StarSparrow_Yellow.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/UnityConnectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/UnityConnectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,7 +32,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/EmreScript/ShieldHit.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/YarenScript/BuyButtons.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ads@4.4.2/Runtime/Advertisement/Advertisement.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ads@4.4.2/Runtime/Advertisement/Utilities/CoroutineExecutor.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="2R3UPPQoUqkNO0WXxVQU8xKtffA" />
   <component name="ProjectViewState">
@@ -92,6 +110,7 @@
       <workItem from="1686478235325" duration="1512000" />
       <workItem from="1686484498198" duration="3130000" />
       <workItem from="1686494295885" duration="10000" />
+      <workItem from="1686659634830" duration="5274000" />
     </task>
     <servers />
   </component>
