@@ -11,6 +11,8 @@ public class BuffSpawnerScript : MonoBehaviour
     public float timer = 0f;
     public float minForce = 1f;
     public float maxForce = 5f;
+    public int minScore;
+    public int maxScore;
 
     private Camera mainCamera;
 
@@ -60,7 +62,7 @@ public class BuffSpawnerScript : MonoBehaviour
         
         GameObject scoreUpBuff = Instantiate(scoreUpBuffPrefab, spawnPosition, Quaternion.identity);
 
-        scoreUpBuff.GetComponent<CollectibleScore>().tmp.text = "+" + Random.Range(1, 6).ToString();
+        scoreUpBuff.GetComponent<CollectibleScore>().tmp.text = "+" + Random.Range(minScore, maxScore).ToString();
         
         Rigidbody scoreUpRb = scoreUpBuff.GetComponent<Rigidbody>();
         scoreUpRb.AddForce(direction * Random.Range(minForce, maxForce), ForceMode.Impulse);
