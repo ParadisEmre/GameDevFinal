@@ -12,6 +12,7 @@ public class AdsManager : MonoBehaviour, IUnityAdsShowListener, IUnityAdsInitial
  
     void Awake()
     {
+        DontDestroyOnLoad(gameObject);
         InitializeAds();
     }
  
@@ -82,4 +83,5 @@ public class AdsManager : MonoBehaviour, IUnityAdsShowListener, IUnityAdsInitial
             // Handle the case when the ad was skipped by the user
         }
     }
+    
 }
