@@ -511,7 +511,7 @@ MonoBehaviour:
   - {fileID: 1286848985}
   - {fileID: 799566467}
   ColorWhite: {fileID: 2100000, guid: 2bd34ca215750fc48902c734d2d5d80f, type: 2}
-  ColorCyan: {fileID: 0}
+  ColorCyan: {fileID: 2100000, guid: d58bf68b17f9a4240aaeb5c200c9a12c, type: 2}
 --- !u!4 &333372402
 Transform:
   m_ObjectHideFlags: 0

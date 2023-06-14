@@ -10,11 +10,11 @@ public class MaterialManager : MonoBehaviour
   
     public void Start()
     {
-        if(PlayerPrefs.GetInt("Skin1") == 2)
+        if(PlayerPrefs.GetInt("isSkin1") == 2)
         {
             changeColorWhite();
         }
-        if(PlayerPrefs.GetInt("Skin2") == 2)
+        if(PlayerPrefs.GetInt("isSkin2") == 2)
         {
             changeColorCyan();
         }
