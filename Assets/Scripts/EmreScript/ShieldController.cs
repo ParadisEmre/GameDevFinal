@@ -14,6 +14,7 @@ public class ShieldController : MonoBehaviour
     void Start()
     {
         shield.SetActive(true);
+        DeactivateShield();
     }
 
     void Update()
