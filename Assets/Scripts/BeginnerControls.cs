@@ -6,10 +6,10 @@ public class BeginnerControls : MonoBehaviour
 {
     void Start()
     {
-        if (PlayerPrefs.GetInt("Skin1") == 2)
+        if (PlayerPrefs.GetInt("isSkin1") == 2)
         {
             //gemi.material = 1
-        }else if (PlayerPrefs.GetInt("Skin2") == 2)
+        }else if (PlayerPrefs.GetInt("isSkin2") == 2)
         {
             //gemi.material = 1
         }else
